@@ -20,7 +20,7 @@ function mostrarError(mensaje) {
         modal.style.display = "none";
     }, 5000);
 
-    inputAmigos.value = ""; // Limpiar el campo de entrada
+    inputAmigos.value = ""; // Limpiar el campo de entrada    
 }
 
 // Función para cerrar el modal manualmente
@@ -68,7 +68,11 @@ function agregarAmigo() {
         mostrarError("⚠️Este nombre ya ha sido agregado.");
     }
 
-    inputAmigos.value = ""; // Limpiar el campo de entrada
+    // Limpiar el campo de entrada
+    inputAmigos.value = ""; 
+
+    // Enfocar el campo de entrada nuevamente
+    inputAmigos.focus();
 }
 
 function actualizarLista() {
