@@ -4,15 +4,38 @@ const inputAmigos = document.getElementById("amigo");
 const listaAmigos = document.getElementById("listaAmigos");
 const listaResultados = document.getElementById("resultado");
 
+// Función para mostrar el modal de error
+function mostrarError(mensaje) {
+    const modal = document.getElementById("modal-error");
+    const modalMensaje = document.getElementById("modal-mensaje");
+
+    // Mostrar el mensaje en el modal
+    modalMensaje.textContent = mensaje;
+
+    // Mostrar el modal
+    modal.style.display = "flex";
+
+    // Cerrar el modal automáticamente después de 3 segundos
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 3000);
+}
+
+// Función para cerrar el modal manualmente
+document.getElementById("cerrar-modal").addEventListener("click", () => {
+    const modal = document.getElementById("modal-error");
+    modal.style.display = "none";
+});
+
 function agregarAmigo() {
     const nombre = inputAmigos.value.trim(); // Para evitar nombres que solo difieran en espacios
     console.log(typeof nombre);
     console.log(nombre.length);
     
 
-    //Validar que el campo no esta vacio
+    // Verifica que el nombre no esté vacío ni tenga menos de 2 caracteres.
     if (nombre === "" || nombre.length < 2) {
-        mostrarError("⚠️Por favor, ingrese un nombre.");
+        mostrarError("⚠️El nombre ingresado esta vacío o bien tiene menos de 2 caracteres.");
         return;
     }
 
@@ -50,14 +73,6 @@ function agregarAmigo() {
 
 function actualizarLista() {
     listaAmigos.innerHTML = amigos.map(nombre => `<li>${nombre}</li>`).join("");
-}
-
-function mostrarError(mensaje) {
-    const errorElement = document.createElement("p");
-    errorElement.textContent = mensaje;
-    errorElement.style.color = "red";
-    inputAmigos.parentNode.appendChild(errorElement);
-    setTimeout(() => errorElement.remove(), 3000); // Eliminar el mensaje después de 3 segundos
 }
 
 function sortearAmigo() {
