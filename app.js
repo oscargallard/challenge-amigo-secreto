@@ -5,20 +5,37 @@ const listaAmigos = document.getElementById("listaAmigos");
 const listaResultados = document.getElementById("resultado");
 
 function agregarAmigo() {
-    const nombre = inputAmigos.value.trim();
-    if (nombre === "") {
-        mostrarError("Por favor, inserte un nombre.");
+    const nombre = inputAmigos.value.trim(); // Para evitar nombres que solo difieran en espacios
+    console.log(typeof nombre);
+    console.log(nombre.length);
+    
+
+    //Validar que el campo no esta vacio
+    if (nombre === "" || nombre.length < 2) {
+        mostrarError("⚠️Por favor, ingrese un nombre.");
         return;
     }
 
-    if (!amigos.includes(nombre)) {
-        amigos.push(nombre);
+    // Validar que el nombre no contenga caracteres especiales
+    const regex = /^[a-zA-Z0-9\s]+$/;
+    if (!regex.test(nombre)) {
+        mostrarError("❌El nombre NO debe contener caracteres especiales.");
+        return;
+    }
+    
+    // Normalizar el nombre (convertir a minúsculas) para ignorar mayúsculas/minúsculas
+    const nombreNormalizado = nombre.toLowerCase();
+    // Verificar si el nombre ya existe 
+    const existeNombre = amigos.some(amigo => amigo.toLowerCase() === nombreNormalizado);
+
+    if (!existeNombre) {
+        amigos.push(nombre); // Agregar el nombre original (sin normalizar)
         actualizarLista();
     } else {
-        mostrarError("Este nombre ya ha sido agregado.");
+        mostrarError("⚠️Este nombre ya ha sido agregado.");
     }
 
-    inputAmigos.value = "";
+    inputAmigos.value = ""; // Limpiar el campo de entrada
 }
 
 function actualizarLista() {
@@ -37,7 +54,7 @@ function sortearAmigo() {
     listaResultados.innerHTML = "";
 
     if (amigos.length === 0) {
-        mostrarError("No hay amigos para sortear!");
+        mostrarError("❌No hay amigos para sortear!");
         return;
     }
 
