@@ -4,8 +4,8 @@
     --color-tertiary: #D0D5DC;
     --color-button: #FE652B;
     --color-button-hover: #E55720;
-    --color-button-reset: #2AFE64;
-    --color-button-reset-hover: #189139;
+    --color-button-reset: #409D44;
+    --color-button-reset-hover: #2AFE64;
     --color-text: #444444;
     --color-white: #FFFFFF;
 }
@@ -23,6 +23,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Inter", sans-serif;
 }
 
 .main-content {
@@ -30,15 +31,28 @@ body {
     flex-direction: column;
     height: 100%;
     width: 100%;
+    max-width: 800px; /* Limitar el ancho máximo para pantallas grandes */
+    margin: 0 auto; /* Centrar el contenido */
 }
 
 /* Banner */
 .header-banner {
     flex: 40%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 0 0;
+    padding: 40px 20px;
+}
+
+/* Títulos */
+.main-title {
+    font-size: 48px;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-white);
+    text-align: center;
 }
 
 /* Sección de entrada */
@@ -54,17 +68,8 @@ body {
     width: 100%;
 }
 
-/* Títulos */
-.main-title {
-    font-size: 48px;
-    font-family: "Merriweather", serif;
-    font-weight: 900;
-    font-style: italic;
-    color: var(--color-white);
-}
-
 .section-title {
-    font-family: "Inter", serif;
+    font-family: "Inter", serif;    
     font-size: 36px;
     font-weight: 700;
     color: var(--color-primary);
@@ -81,40 +86,43 @@ body {
     margin-top: 20px;
 }
 
+/* Estilos de entrada de texto */
 .input-name {
-    width: 100%;
-    padding: 10px;
+    font-family: "Merriweather", serif;
+    font-size: 1rem;
+    width: 100%;    
+    padding: 1rem;
     border: 2px solid #000;
-    border-radius: 25px 0 0 25px;
-    font-size: 16px;
+    border-radius: 25px 0 0 25px;      
+    flex: 1;
+    border-right: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .button-container {
-    width: 300px;
-    justify-content: center;
-}
-
-/* Estilos de entrada de texto */
-.input-title {
-    flex: 1;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 2px solid #333;
-    border-right: none;
-    border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Espacio entre botones */
+    margin-top: 1rem;
 }
 
 /* Estilos de botón */
 button {
-    padding: 15px 30px;
+    /* padding: 15px 30px; */
+    padding: 1rem 2rem;
     font-family: "Inter", sans-serif;
     font-size: 16px;
     border: 2px solid #000;
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
+}
+
+button:hover {
+    transform: scale(1.05); /* Aumento de escala al pasar el mouse */
 }
 
 .button-add {
@@ -132,14 +140,17 @@ ul {
     list-style-type: none;
     color: var(--color-text);
     font-family: "Inter", sans-serif;
-    font-size: 18px;
-    margin: 20px 0;
+    font-size: 1rem;
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
 }
 
 .result-list {
-    margin-top: 15px;
+    margin-top: 1rem;
     color: #05DF05;
-    font-size: 22px;
+    font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
 }
@@ -149,14 +160,14 @@ ul {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 10px 40px;
+    padding: 1rem 2rem;
     color: var(--color-white);
     background-color: var(--color-button);
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .button-draw img {
-    margin-right: 40px;
+    margin-right: 2rem; /* 40px; */
 }
 
 .button-draw:hover {
@@ -168,11 +179,11 @@ ul {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 10px 40px;    
-    font-size: 16px;    
+    padding: 1rem 2rem;    
+    font-size: 1rem;    
     background-color: var(--color-button-reset); /* Color verde claro */
     color: #303943; /* Color de texto oscuro */
-    margin-top: 20px; /* Espacio arriba del botón */    
+    margin-top: 1rem; /* Espacio arriba del botón */    
 }
 
 /* Efecto hover */
@@ -181,15 +192,15 @@ ul {
 }
 
 .button-reset img {
-    margin-right: 40px;
+    margin-right: 2rem; /* 40px; */
 }
 
 /* Estilo para el ícono de confirmación */
 .confirmacion-icono {
     display: none; /* Oculto por defecto */
-    font-size: 24px;
-    color: green; /* Color verde para indicar éxito */
-    margin-left: 10px; /* Espacio entre el botón y el ícono */
+    font-size: 1.5rem;
+    color: #5FD564; /* Color verde para indicar éxito */
+    margin-left: 1rem; /* Espacio entre el botón y el ícono */
     animation: fadeOut 3s forwards; /* Animación para desvanecerse después de 3 segundos */
 }
 
@@ -219,8 +230,8 @@ ul {
 
 /* Contenido del modal */
 .modal-content {
-    background-color: #fff; /* Fondo blanco */
-    padding: 20px;
+    background-color: #FFFAEB; /* Color de fondo */
+    padding: 2rem;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -230,22 +241,88 @@ ul {
 
 /* Mensaje de error dentro del modal */
 .modal-mensaje {
-    color: red;
-    font-size: 18px;
-    margin-bottom: 15px;
+    color: #5D2822; /* Color: dull red */
+    font-size: 1.25rem;
+    margin-bottom: 1rem;    
 }
 
 /* Botón para cerrar el modal */
 .cerrar-modal {
-    padding: 10px 20px;
+    padding: 0.75rem 1.5rem;
     background-color: #FE652B; /* Color del botón */
-    color: white;
+    color: #FFFAEB;
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease; /* Transición suave */
 }
 
 .cerrar-modal:hover {
     background-color: #E55720; /* Cambio de color al pasar el mouse */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.25rem; /* Reducir tamaño del título */
+    }
+
+    .section-title {
+        font-size: 1.75; /* Reducir tamaño del subtítulo */
+    }
+
+    .input-name {
+        font-size: 0.875rem; /* Reducir tamaño del texto en el input */
+        padding: 0.5rem; /* Reducir padding */
+    }
+
+    button {
+        font-size: 0.875rem; /* Reducir tamaño del texto en los botones */
+        padding: 0.75rem 1.25rem; /* Reducir padding */
+    }
+
+    ul {
+        font-size: 1rem; /* Reducir tamaño del texto en las listas */
+    }
+
+    .modal-content {
+        padding: 1.5rem; /* Reducir padding del modal */
+    }
+
+    .modal-mensaje {
+        font-size: 1rem; /* Reducir tamaño del mensaje en el modal */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.75rem; /* Tamaño aún más pequeño para móviles */
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .input-name {
+        font-size: 0.75rem;
+        padding: 0.5rem;
+    }
+
+    button {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+    }
+
+    ul {
+        font-size: 0.875rem;
+    }
+
+    .modal-content {
+        padding: 1rem;
+    }
+
+    .modal-mensaje {
+        font-size: 0.875rem;
+    }
 }

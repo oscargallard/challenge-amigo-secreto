@@ -15,10 +15,10 @@ function mostrarError(mensaje) {
     // Mostrar el modal
     modal.style.display = "flex";
 
-    // Cerrar el modal automáticamente después de 3 segundos
+    // Cerrar el modal automáticamente después de 5 segundos
     setTimeout(() => {
         modal.style.display = "none";
-    }, 3000);
+    }, 5000);
 }
 
 // Función para cerrar el modal manualmente
@@ -26,6 +26,7 @@ document.getElementById("cerrar-modal").addEventListener("click", () => {
     const modal = document.getElementById("modal-error");
     modal.style.display = "none";
 });
+
 
 function agregarAmigo() {
     const nombre = inputAmigos.value.trim(); // Para evitar nombres que solo difieran en espacios
