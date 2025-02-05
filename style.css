@@ -262,6 +262,22 @@ ul {
     background-color: #E55720; /* Cambio de color al pasar el mouse */
 }
 
+/* Contenedor de la imagen */
+.image-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estilo responsivo para la imagen */
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .main-title {
@@ -292,6 +308,10 @@ ul {
 
     .modal-mensaje {
         font-size: 1rem; /* Reducir tamaño del mensaje en el modal */
+    }
+
+    .image-container {
+        max-width: 400px;
     }
 }
 
@@ -324,5 +344,9 @@ ul {
 
     .modal-mensaje {
         font-size: 0.875rem;
+    }
+
+    .image-container {
+        max-width: 300px;
     }
 }

@@ -19,6 +19,8 @@ function mostrarError(mensaje) {
     setTimeout(() => {
         modal.style.display = "none";
     }, 5000);
+
+    inputAmigos.value = ""; // Limpiar el campo de entrada
 }
 
 // Función para cerrar el modal manualmente
@@ -29,14 +31,11 @@ document.getElementById("cerrar-modal").addEventListener("click", () => {
 
 
 function agregarAmigo() {
-    const nombre = inputAmigos.value.trim(); // Para evitar nombres que solo difieran en espacios
-    console.log(typeof nombre);
-    console.log(nombre.length);
-    
+    const nombre = inputAmigos.value.trim(); // Para evitar nombres que solo difieran en espacios       
 
     // Verifica que el nombre no esté vacío ni tenga menos de 2 caracteres.
     if (nombre === "" || nombre.length < 2) {
-        mostrarError("⚠️El nombre ingresado esta vacío o bien tiene menos de 2 caracteres.");
+        mostrarError("⚠️ Esta vacío o bien el nombre tiene menos de 2 caracteres.");
         return;
     }
 
