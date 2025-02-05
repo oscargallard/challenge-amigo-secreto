@@ -31,6 +31,16 @@ function agregarAmigo() {
     if (!existeNombre) {
         amigos.push(nombre); // Agregar el nombre original (sin normalizar)
         actualizarLista();
+
+        // Mostrar el ícono de confirmación
+        const confirmacionIcono = document.getElementById("confirmacion-icono");
+        confirmacionIcono.textContent = "✔️"; // Ícono de confirmación
+        confirmacionIcono.style.display = "inline"; // Mostrar el ícono
+
+        // Ocultar el ícono después de 3 segundos
+        setTimeout(() => {
+            confirmacionIcono.style.display = "none";
+        }, 3000);
     } else {
         mostrarError("⚠️Este nombre ya ha sido agregado.");
     }

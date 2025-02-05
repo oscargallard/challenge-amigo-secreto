@@ -2,7 +2,7 @@
     --color-primary: #4B69FD;
     --color-secondary: #FFF9EB;
     --color-tertiary: #D0D5DC;
-    --color-button: #FE652b;
+    --color-button: #FE652B;
     --color-button-hover: #E55720;
     --color-button-reset: #2AFE64;
     --color-button-reset-hover: #189139;
@@ -182,4 +182,23 @@ ul {
 
 .button-reset img {
     margin-right: 40px;
+}
+
+/* Estilo para el ícono de confirmación */
+.confirmacion-icono {
+    display: none; /* Oculto por defecto */
+    font-size: 24px;
+    color: green; /* Color verde para indicar éxito */
+    margin-left: 10px; /* Espacio entre el botón y el ícono */
+    animation: fadeOut 3s forwards; /* Animación para desvanecerse después de 3 segundos */
+}
+
+/* Animación para desvanecer el ícono */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
