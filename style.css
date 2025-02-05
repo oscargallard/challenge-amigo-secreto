@@ -1,9 +1,11 @@
 :root {
     --color-primary: #4B69FD;
     --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
+    --color-tertiary: #D0D5DC;
+    --color-button: #FE652b;
+    --color-button-hover: #E55720;
+    --color-button-reset: #2AFE64;
+    --color-button-reset-hover: #189139;
     --color-text: #444444;
     --color-white: #FFFFFF;
 }
@@ -122,26 +124,7 @@ button {
 }
 
 .button-add:hover {
-    background-color: #a1a1a1;
-}
-
-/* Estilos para el botón de reinicio */
-.button-reset {
-    padding: 15px 30px;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    border: 2px solid #000;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    background-color: var(--color-tertiary); /* Color gris */
-    color: var(--color-text); /* Color de texto oscuro */
-    margin-top: 20px; /* Espacio arriba del botón */
-}
-
-/* Efecto hover */
-.button-reset:hover {
-    background-color: #a1a1a1; /* Un tono gris más oscuro */
+    background-color: #9AA6B5;
 }
 
 /* Listas */
@@ -178,4 +161,25 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+/* Estilos para el botón de reinicio */
+.button-reset {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;    
+    font-size: 16px;    
+    background-color: var(--color-button-reset); /* Color verde claro */
+    color: #303943; /* Color de texto oscuro */
+    margin-top: 20px; /* Espacio arriba del botón */    
+}
+
+/* Efecto hover */
+.button-reset:hover {
+    background-color: var(--color-button-reset-hover); /* Un tono verde oscuro */
+}
+
+.button-reset img {
+    margin-right: 40px;
 }
